@@ -59,8 +59,8 @@ int main(void)
 				k = 51;
 			else if (j == 51)
 				k = 52;
-			else if (j == 52) 
-                        	k = 52;
+			else if (j == 52)
+				k = 52;
 			else if (j == 52)
 				k = 53;
 			else if (j == 53)
