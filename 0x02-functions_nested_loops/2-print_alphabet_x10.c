@@ -1,7 +1,7 @@
 #include "main.h"
 #include <stdio.h>
 /**
- * print_alphabet - is actually going to print the lowercase
+ * print_alphabet_x10 - is actually going to print the lowercase
  * alphabet 10 times using _putchar()while and for loop
  */
 
@@ -12,7 +12,7 @@ void print_alphabet_x10(void)
 	int  j;
 
 	j = 0;
-	while(j < 10)
+	while (j < 10)
 	{
 		for (i = 0; alpha[i] != '\0'; i++)
 		{
