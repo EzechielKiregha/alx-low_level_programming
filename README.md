@@ -1,2 +1,1 @@
-# alx-low_level_programming
-This is a special repo dedicated to C Programming Alx Students with low level programming skills
+We are actually going to be talking about Functions, loops(nested or not) in this project
