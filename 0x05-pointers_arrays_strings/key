@@ -1,0 +1,33 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<time.h>
+
+
+typedef struct student{
+	char *name;
+	int password;
+}student;
+
+int main(void)
+{
+	student st[3];
+	int i;
+	int upper = 205666, lower = 105555;
+
+	printf("Welcome ALX program\nWe need 3 students only\n");
+	for(i = 0; i < 3; i++)
+	{
+		srand(time(NULL));
+		int r = (rand() % (upper - lower + 1)) + lower;
+		printf("\nWhat is your name:");
+		scanf("%s",st[i].name);
+		st[i].password = r;
+		printf("New password generated successfully.\n");
+	}
+	printf("\nOur incredible students: \n");
+	printf("Name\t\tpassword\n=====\t\t=========\n");
+	for (i = 0; i < 3; i++)
+		printf("%s\t\t%d\n",st[i].name,st[i].password);
+	return (0);
+}
+
