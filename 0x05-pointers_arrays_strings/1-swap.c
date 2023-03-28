@@ -22,5 +22,4 @@ void swap_int(int *a, int *b)
 	/*Take the value swaped back to the pointers*/
 	*a = _a;
 	*b = _b;
-	return;
 }
