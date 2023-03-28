@@ -14,13 +14,13 @@ int main(void)
 	for (i = 0; i < PASSWORD_LENGTH; i++) {
 		r = rand() % 100;
 		if (r < 40)
-			password[i] = rand() % 26 + 'a';  // Lowercase letter
+			password[i] = rand() % 26 + 'a';  /* Lowercase letter*/
 		else if (r < 80)
-			password[i] = rand() % 26 + 'A';  // Uppercase letter
+			password[i] = rand() % 26 + 'A';  /* Uppercase letter*/
 		else if (r < 95)
-			password[i] = rand() % 10 + '0';  // Digit
+			password[i] = rand() % 10 + '0';  /* Digit*/
 		else
-			password[i] = rand() % 16 + '!';  // Symbol
+			password[i] = rand() % 16 + '!';  /* Symbol*/
 	}
 	password[PASSWORD_LENGTH] = '\0';
 	printf("%s", password);

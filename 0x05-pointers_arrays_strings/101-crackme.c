@@ -15,8 +15,8 @@ int main(int argc, char *argv[])
 		printf("Usage: %s <password>\n", argv[0]);
 		return 1;
 	}
-	// Generate a random password with at least one uppercase letter,
-	// one lowercase letter, one digit, and one special character
+	/* Generate a random password with at least one uppercase letter,*/
+	/* one lowercase letter, one digit, and one special character*/
 	srand(time(NULL));
 	password[i++] = rand() % 26 + 'A'; // Uppercase letter
 	password[i++] = rand() % 26 + 'a'; // Lowercase letter
@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 		}
 	}
 	password[PASSWORD_LENGTH] = '\0';
-	// Check if the entered password matches the generated password
+	/* Check if the entered password matches the generated password*/
 	if (strcmp(argv[1], password) == 0)
 		printf("Tada! Congrats\n");
 	else
