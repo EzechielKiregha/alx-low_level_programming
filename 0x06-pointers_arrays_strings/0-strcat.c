@@ -13,25 +13,14 @@
 char *_strcat(char *dest, char *src)
 {
 	int i, j;
-	int lim, len = 0;
-	char strink[1000];
+	char str[1000] = "";
 
-	for (i = 0; dest[i] != '\0'; i++)
-	{
-		len++;
-		strink[i] = dest[i];
-	}
-	for (i = 0; src[i] != '\0'; i++)
-	{
-		lim = len + i;
-		strink[lim] = src[i];
-		if (i)
-		{
-			strink[lim + 1] = '\0';
-			continue;
-		}
-	}
-	for (j = 0; strink[j] != '\0'; j++)
-		dest[j] = strink[j];
+	for (i = 0;dest[i] != '\0'; i++)
+		str[i] = dest[i];
+	for (j = 0; src[j] != '\0'; j++)
+		str[i+j] = src[j];
+	str[i + j] = '\0';
+	for (j = 0; str[j] != '\0'; j++)
+		dest[j] = str[j];
 	return (dest);
 }
