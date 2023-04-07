@@ -51,14 +51,13 @@ int wildcmp(char *s1, char *s2)
  */
 int cmp(char *s1, char *s2)
 {
-	int i;
+	int l;
 
-	i = 0;
-	while (*(s1 + i) != '\0')
-	{
-		if (wildcmp(s1 + i, s2 + 1))
-			return (1);
-		i++;
-	}
-	return (0);
+	l = strlen(s1);
+	if (*s1 < l)
+		return (0);
+	else if (wildcmp(s1, s2 + 1))
+		return (1);
+	else
+		return (cmp(s1 + 1, s2));
 }
