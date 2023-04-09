@@ -11,10 +11,13 @@
 
 int main(int argc, char *argv[])
 {
+	int n;
+
 	if (argv[argc] == NULL)
 	{
-            print_number(argc - 1);
-	    _putchar('\n');
+		n = argc - 1;
+		print_number(n);
+		_putchar('\n');
 	}
 	return (0);
 }
