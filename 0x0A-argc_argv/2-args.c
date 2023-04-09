@@ -19,8 +19,11 @@ int main(int argc, char *argv[])
 		{
 			s = argv[i];
 			j = 0;
-			while (s[j] = '\0')
-				_putchar(s[i]);
+			while (s[j] != '\0')
+			{
+				_putchar(s[j]);
+				j++;
+			}
 			_putchar('\n');
 		}
 	return (0);
