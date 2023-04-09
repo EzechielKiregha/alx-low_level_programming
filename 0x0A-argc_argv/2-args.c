@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 
 /**
  * main - prints all arguments it receives.
@@ -11,9 +11,17 @@
 int main(int argc, char *argv[])
 {
 	int i;
+	int j;
+	char *s;
 
 	if (argc > 0)
 		for (i = 0; i < argc; i++)
-			printf("%s\n", argv[i]);
+		{
+			s = argv[i];
+			j = 0;
+			while (s[j] = '\0')
+				_putchar(s[i]);
+			_putchar('\n');
+		}
 	return (0);
 }
