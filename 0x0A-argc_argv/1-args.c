@@ -11,12 +11,9 @@
 
 int main(int argc, char *argv[])
 {
-	int n;
-
 	if (argv[argc] == NULL)
-	{
-		n = argc - 1;
-		print_number(n);
+	{		
+		_putchar((argc - 1) + '0');
 		_putchar('\n');
 	}
 	return (0);
