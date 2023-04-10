@@ -24,11 +24,11 @@ int main(int argc, char *argv[])
 	char buffer[10];
 	char *temp = buffer;
 
-	if (argc - 1 == 0)
+	if (argc == 1)
 	{
 		_putchar('0');
 		_putchar('\n');
-		return (1);
+		return (0);
 	}
 	else
 		result = add(argc, argv);

@@ -60,7 +60,7 @@ int main(int argc, char *argv[])
 int mult(int n, char *argv[])
 {
 	int i, j, t, num1 = 0, num2 = 0, result;
-	char error[6] = "Error\n";
+	char error[7] = "Error\n";
 	int echec;
 
 	if (n != 3)
