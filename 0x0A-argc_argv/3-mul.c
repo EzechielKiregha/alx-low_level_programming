@@ -70,8 +70,8 @@ int mult(int n, char *argv[])
 		{
 			_putchar(error[i]);
 			i++;
-			echec = - 1;
-		}	
+			echec = -1;
+		}
 	}
 	for (i = 1; i < n; i++)
 	{
@@ -91,9 +91,9 @@ int mult(int n, char *argv[])
 				{
 					_putchar(error[t]);
 					t++;
-					echec = - 1;
+					echec = -1;
 				}
-			}	
+			}
 			if (i == 1)
 				num1 = num1 * 10 + argv[i][j] - '0';
 			else
@@ -102,7 +102,7 @@ int mult(int n, char *argv[])
 	}
 	if (echec < 0)
 		result = -1;
-	else 
+	else
 		result = num1 * num2;
 	return (result);
 }
