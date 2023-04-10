@@ -1,14 +1,14 @@
 #include "main.h"
 
 /**
- * mult - multiplies and returns the peoduct of 2 numbers
+ * add - multiplies and returns the summation of numbers
  * @n: integer variable
  * @argv: Pointer to array of strings
  *
  * Return: result on succes, otherwise (1) on fail
  */
 
-int mult(int n, char *argv[]);
+int add(int n, char *argv[]);
 
 /**
  * main - multiplies two numbers
@@ -24,7 +24,14 @@ int main(int argc, char *argv[])
 	char buffer[10];
 	char *temp = buffer;
 
-	result = mult(argc, argv);
+	if (argc - 1 == 0)
+	{
+		_putchar('0');
+		_putchar('\n');
+		return (1);
+	}
+	else
+		result = add(argc, argv);
 	if (result == -1)
 		return (1);
 	if (result == 0)
@@ -32,11 +39,6 @@ int main(int argc, char *argv[])
 		_putchar('0');
 		_putchar('\n');
 		return (0);
-	}
-	if (result < 0 && result != -1)
-	{
-		_putchar('-');
-		result = -result;
 	}
 	while (result)
 	{
@@ -50,38 +52,21 @@ int main(int argc, char *argv[])
 }
 
 /**
- * mult - multiplies and returns the peoduct of 2 numbers
+ * add - add and returns the summation of numbers
  * @n: integer variable
  * @argv: Pointer to array of strings
  *
  * Return: result on succes, otherwise (1) on fail
  */
 
-int mult(int n, char *argv[])
+int add(int n, char *argv[])
 {
-	int i, j, t, num1 = 0, num2 = 0, result;
-	char error[6] = "Error\n";
-	int echec;
+	int i, j, t, num = 0, sum = 0;
+	char error[7] = "Error\n";
 
-	if (n != 3)
-	{
-		i = 0;
-		while (error[i] != '\0')
-		{
-			_putchar(error[i]);
-			i++;
-			echec = -1;
-		}
-	}
 	for (i = 1; i < n; i++)
 	{
-		if (argv[i][0] == '-')
-		{
-			_putchar('-');
-			j = 1;
-		}
-		else
-			j = 0;
+		j = 0;
 		for (; argv[i][j]; j++)
 		{
 			if (argv[i][j] < '0' || argv[i][j] > '9')
@@ -91,18 +76,13 @@ int mult(int n, char *argv[])
 				{
 					_putchar(error[t]);
 					t++;
-					echec = -1;
 				}
+				return (-1);
 			}
-			if (i == 1)
-				num1 = num1 * 10 + argv[i][j] - '0';
-			else
-				num2 = num2 * 10 + argv[i][j] - '0';
+			num = num * 10 + argv[i][j] - '0';
 		}
+		sum += num;
+		num = 0;
 	}
-	if (echec < 0)
-		result = -1;
-	else
-		result = num1 * num2;
-	return (result);
+	return (sum);
 }
