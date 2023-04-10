@@ -16,16 +16,14 @@ int main(int argc, char *argv[])
 	int b;
 	int i;
 	int j;
+	char err[6] = "Error";
 
 	if (argv[argc] == NULL)
 	{
 		if (argc - 1 == 0 || argc > 3)
 		{
-			_putchar('E');
-			_putchar('r');
-			_putchar('r');
-			_putchar('o');
-			_putchar('r');
+			for (i = 0; err[i] != '\0'; i++)
+				_putchar(err[i]);
 			_putchar('\n');
 			return (1);
 		}
@@ -34,34 +32,19 @@ int main(int argc, char *argv[])
 			a = _atoi(argv[1]);
 			b = _atoi(argv[2]);
 			if (a < 0 || b < 0)
-			{
-				a = _abs(a);
-				b = _abs(b);
-				n = a * b;
-				i = 0;
-				while (n != 0)
-				{
-					digit[i] = (n % 10) + '0';
-					n = n / 10;
-					i++;
-				}
 				_putchar('-');
-				for (j = i - 1; j >= 0; j--)
-					_putchar(digit[j]);
-			}
-			else
+			a = _abs(a);
+			b = _abs(b);
+			n = a * b;
+			i = 0;
+			while (n != 0)
 			{
-				n = a * b;
-				i = 0;
-				while (n != 0)
-				{
-					digit[i] = (n % 10) + '0';
-					n = n / 10;
-					i++;
-				}
-				for (j = i - 1; j >= 0; j--)
-					_putchar(digit[j]);
+				digit[i] = (n % 10) + '0';
+				n = n / 10;
+				i++;
 			}
+			for (j = i - 1; j >= 0; j--)
+				_putchar(digit[j]);
 		}
 		_putchar('\n');
 	}
