@@ -19,6 +19,7 @@ char *_strcpy(char *dest, char *src);
 int _atoi(char *s);
 void print_number(int n);
 int _isdigit(int n);
+int _abs(int n);
 
 
 #endif /* MAIN_H */

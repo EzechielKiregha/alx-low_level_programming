@@ -1,15 +1,6 @@
 #include "main.h"
 
 /**
- * nega - returns the character converted to integer
- * @arg: Pointer to array of string
- *
- * Return: (n) the number converted
- */
-
-int nega(char *arg[]);
-
-/**
  * main - multiplies two numbers.
  * @argc: integer variable
  * @argv: Pointer to array of strings
@@ -20,7 +11,6 @@ int nega(char *arg[]);
 int main(int argc, char *argv[])
 {
 	int n;
-	int si;
 	char digit[20];
 	int a;
 	int b;
@@ -43,10 +33,11 @@ int main(int argc, char *argv[])
 		{
 			a = _atoi(argv[1]);
 			b = _atoi(argv[2]);
-			n = a * b;
-			si = nega(argv);
-			if (si == '-')
+			if (a < 0 || b < 0)
 			{
+				a = _abs(a);
+				b = _abs(b);
+				n = a * b;
 				i = 0;
 				while (n != 0)
 				{
@@ -54,8 +45,7 @@ int main(int argc, char *argv[])
 					n = n / 10;
 					i++;
 				}
-				if (a < 0 || b < 0)
-					_putchar('-');
+				_putchar('-');
 				for (j = i - 1; j >= 0; j--)
 					_putchar(digit[j]);
 			}
@@ -76,17 +66,4 @@ int main(int argc, char *argv[])
 		_putchar('\n');
 	}
 	return (0);
-}
-/**
- * nega - returns the character converted to integer
- * @arg: Pointer to array of string
- *
- * Return: (n) the number converted
- */
-
-int nega(char **arg)
-{
-	if (**arg == '-')
-		return (-1);
-	return (1);
 }
