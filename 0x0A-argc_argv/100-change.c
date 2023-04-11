@@ -31,7 +31,7 @@ int main(int argc, char *argv[])
 		while (error[i] != '\0')
 		{
 			_putchar(error[i]);
-			i++;	
+			i++;
 		}
 		return (1);
 	}
@@ -48,6 +48,14 @@ int main(int argc, char *argv[])
 	_putchar('\n');
 	return (0);
 }
+
+
+/**
+ * cents - changes and returns the number of  pieces
+ * @num: integer variable
+ *
+ * Return: coins the result
+ */
 
 int cents(int num)
 {
