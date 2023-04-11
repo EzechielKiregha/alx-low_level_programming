@@ -17,8 +17,6 @@ char *create_array(unsigned int size, char c)
 	if (size == 0)
 		return (NULL);
 	array = (char *)malloc(sizeof(char) * size);
-	if ((c < 'a' && c > 'z') || (c < 'A' && c > 'Z'))
-		return (NULL);
 	while (i < size)
 	{
 		array[i] = c;
