@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  * cents - changes and returns the number of  pieces
@@ -36,8 +38,10 @@ int main(int argc, char *argv[])
 		return (1);
 	}
 	else
-		num = _atoi(argv[1]);
+		num = atoi(argv[1]);
 	cent = cents(num);
+	if (cent == 0)
+		return (0);
 	while (cent)
 	{
 		*temp++ = cent % 10 + '0';
