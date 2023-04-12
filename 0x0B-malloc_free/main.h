@@ -11,5 +11,8 @@ int **alloc_grid(int width, int height);
 void free_grid(int **grid, int height);
 char *argstostr(int ac, char **av);
 char **strtow(char *str);
+char *_strncpy(char *dest, char *src, int n);
+char *_strcpy(char *dest, char *src);
+int _strlen(char *s);
 
 #endif
