@@ -11,7 +11,7 @@
 char *argstostr(int ac, char **av)
 {
 	int i, j, k, m = 0;
-	char temp[1000] = "";
+	char temp[5000] = "";
 	char *ptr;
 
 	if (ac == 0 || av == NULL)
@@ -32,7 +32,7 @@ char *argstostr(int ac, char **av)
 		m = m + 1;
 		k++;
 	}
-	ptr = (char *)malloc(sizeof(char) * m);
+	ptr = (char *)malloc(sizeof(char) * m + 1);
 	if (ptr == NULL)
 		return (NULL);
 	for (j = 0; temp[j] != '\0'; j++)
