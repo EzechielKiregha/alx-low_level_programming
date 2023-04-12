@@ -87,6 +87,13 @@ char **strtow(char *str)
 	s[size] = NULL;
 	return (s);
 }
+
+/**
+ * check - checks the legnth of a string if is 0.
+ * @str: Pointer to string
+ *
+ * Return: 1 on fails, 0 otherwise
+ */
 int check(char *str)
 {
 	if (str == NULL || *str == '\0')
