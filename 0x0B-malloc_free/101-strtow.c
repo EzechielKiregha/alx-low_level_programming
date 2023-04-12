@@ -1,6 +1,35 @@
 #include "main.h"
 
 /**
+ * _strlen - Computes the length of a string.
+ * @s: Pointer to a string of characters.
+ * Return: The length of the string.
+ */
+
+int _strlen(char *s);
+
+/**
+ * _strcpy -  copies the string pointed to by src,
+ * including the terminating null byte (\0),
+ * to the buffer pointed to by dest.
+ * @dest: Pointer to a string
+ * @src: Pointer to string
+ *
+ * Return: dest
+ */
+
+char *_strcpy(char *dest, char *src);
+/**
+ * _strncpy - copy a string up to n bytes
+ * @dest: the destination buffer
+ * @src: the source string
+ * @n: the maximum number of bytes to copy
+ *
+ * Return: a pointer to dest
+ */
+
+char *_strncpy(char *dest, char *src, int n);
+/**
  * strtow -  splits a string into words.
  * @str: Pointer to string to be splited
  *
@@ -50,4 +79,62 @@ char **strtow(char *str)
 	s[size] = NULL;
 	return (s);
 }
+/**
+ * _strncpy - copy a string up to n bytes
+ * @dest: the destination buffer
+ * @src: the source string
+ * @n: the maximum number of bytes to copy
+ *
+ * Return: a pointer to dest
+ */
 
+char *_strncpy(char *dest, char *src, int n)
+{
+	unsigned int i;
+
+	for (i = 0; i < (unsigned int)n && src[i] != '\0'; i++)
+		dest[i] = src[i];
+	for (; i < (unsigned int)n; i++)
+		dest[i] = '\0';
+	return (dest);
+}
+
+/**
+ * _strcpy -  copies the string pointed to by src,
+ * including the terminating null byte (\0),
+ * to the buffer pointed to by dest.
+ * @dest: Pointer to a string
+ * @src: Pointer to string
+ *
+ * Return: dest
+ */
+
+char *_strcpy(char *dest, char *src)
+{
+	int i, len;
+
+	len = 0;
+	while (src[len] != '\0')
+		len++;
+	for (i = 0; i <= len; i++)
+	{
+		dest[i] = src[i];
+	}
+	return (dest);
+}
+
+/**
+ * _strlen - Computes the length of a string.
+ * @s: Pointer to a string of characters.
+ * Return: The length of the string.
+ */
+
+int _strlen(char *s)
+{
+	int len;
+
+	len = 0;
+	while (s[len] != '\0')
+		len++;
+	return (len);
+}
