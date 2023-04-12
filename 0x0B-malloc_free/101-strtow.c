@@ -1,6 +1,14 @@
 #include "main.h"
 
 /**
+ * check - checks the legnth of a string if is 0.
+ * @str: Pointer to string
+ *
+ * Return: 1 on fails, 0 otherwise
+ */
+int check(char *str);
+
+/**
  * _strlen - Computes the length of a string.
  * @s: Pointer to a string of characters.
  * Return: The length of the string.
@@ -41,7 +49,7 @@ char **strtow(char *str)
 	int i, j, size = 0, k = 0;
 	char **s, **tmp;
 
-	if (str == NULL || *str == '\0' || *str == ' ')
+	if (check(str) == 1)
 		return (NULL);
 	for (j = 0; str[j] != '\0'; j++)
 		if ((j == 0 || str[j - 1] == ' ') && (str[j] != ' '))
@@ -79,6 +87,15 @@ char **strtow(char *str)
 	s[size] = NULL;
 	return (s);
 }
+int check(char *str)
+{
+	if (str == NULL || *str == '\0')
+		return (1);
+	if (_strlen(str) == 0)
+		return (1);
+	return (0);
+}
+
 /**
  * _strncpy - copy a string up to n bytes
  * @dest: the destination buffer
