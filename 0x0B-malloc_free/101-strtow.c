@@ -41,7 +41,7 @@ char **strtow(char *str)
 	int i, j, size = 0, k = 0;
 	char **s, **tmp;
 
-	if (str == NULL || *str == '\0')
+	if (str == NULL || *str == '\0' || *str == ' ')
 		return (NULL);
 	for (j = 0; str[j] != '\0'; j++)
 		if ((j == 0 || str[j - 1] == ' ') && (str[j] != ' '))
