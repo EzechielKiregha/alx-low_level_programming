@@ -1,10 +1,10 @@
 #include "main.h"
 
 /**
- *  print_binary - prints the binary valu representation of a number
- *  @n: the decimal number that get converted
+ * print_binary - prints the binary valu representation of a number
+ * @n: the decimal number that get converted
  *
- *  Return: void
+ * Return: nothing
  *
  */
 
@@ -28,5 +28,4 @@ void print_binary(unsigned long int n)
 	}
 	if (!zero)
 		_putchar('0');
-	return;
 }
